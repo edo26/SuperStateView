@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">SuperStateView</string>
+
+    <string name="error_message_title">Woops!</string>
+    <string name="error_message_subtitle">Verify your Internet Connection!</string>
+
+</resources>

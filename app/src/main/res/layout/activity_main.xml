@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context="com.cipolat.superstateview_sample.MainActivity">
+
+    <com.cipolat.superstateview.SuperStateView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:imageResource="@drawable/cloud_sad"
+        app:setTitleText="@string/error_message_title"
+        app:setSubTitleText="@string/error_message_subtitle"
+        app:titleStyle="@style/erro_title"
+        app:subTitleStyle="@style/erro_sub_title"/>
+
+</LinearLayout>
