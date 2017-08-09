@@ -74,7 +74,7 @@ Is composed by 3 elements:
         />
   ```
 
-  ##Instalation
+  ## Instalation
 
   This library is only available at this time only on jCenter
   
