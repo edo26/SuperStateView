@@ -8,9 +8,12 @@ SuperStateView is an Android Library created to make easy the implementation of 
 
 Their use is so easy like other view just put you in your layout and set some basic values.
 
-Is composed by 3 elements
+Is composed by 3 elements:
 
-    
+| IMAGE         
+| ------------- 
+| TITLE         
+| SUBTITLE      
 
 ```xml
 <com.cipolat.superstateview.SuperStateView
@@ -25,4 +28,4 @@ Is composed by 3 elements
   ```
 
   Define your custom Styles to modify the appeareance of the labels.
- 
+
