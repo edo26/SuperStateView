@@ -6,14 +6,16 @@ SuperStateView is an Android Library created to make easy the implementation of 
 
 ##Usage
 
-Their use is so easy like other view just put you in your layout and set some basic values.
+Their use is so easy like other view just add in your layout and set some basic values.
 
 Is composed by 3 elements:
 
 | IMAGE         
 | ------------- 
 | TITLE         
-| SUBTITLE      
+| SUBTITLE
+
+Aca va la IMAGEN      
 
 ```xml
 <com.cipolat.superstateview.SuperStateView
@@ -33,4 +35,20 @@ Is composed by 3 elements:
   **Text:**
    Set the title and subtitle text content using `setTitleText` and `setTitleText`
 
-  Define your custom Styles to modify the appeareance of the labels.
+  **Modify Appeareance:**
+
+  You could change the aspect of the label text using custom Styles using `titleStyle` and `subTitleStyle`
+  Just define in your values/styles.xml your own styles
+
+  ie:
+  
+  ```xml
+
+    <style name="erro_title">
+        <item name="android:textColor">@color/violet</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">30sp</item>
+    </style>
+  ```
+
+
