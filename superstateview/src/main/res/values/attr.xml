@@ -12,8 +12,6 @@
         <attr name="titleStyle" format="reference" />
         <attr name="subTitleStyle" format="reference" />
 
-        <attr name="imagePosition" format="string" />
-
     </declare-styleable>
 </resources>
 

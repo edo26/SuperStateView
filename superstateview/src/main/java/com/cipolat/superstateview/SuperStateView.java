@@ -1,4 +1,17 @@
 package com.cipolat.superstateview;
+/*
+/  ___|                     /  ___| |      | |      | | | (_)
+\ `--. _   _ _ __   ___ _ __\ `--.| |_ __ _| |_ ___ | | | |_  _____      __
+ `--. \ | | | '_ \ / _ \ '__|`--. \ __/ _` | __/ _ \| | | | |/ _ \ \ /\ / /
+/\__/ / |_| | |_) |  __/ |  /\__/ / || (_| | ||  __/\ \_/ / |  __/\ V  V /
+\____/ \__,_| .__/ \___|_|  \____/ \__\__,_|\__\___| \___/|_|\___| \_/\_/
+            | |
+            |_|
+
+  Created by Sebastian Cipolat
+  Version:1.01
+  ARGENTINA 2017
+ */
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -15,10 +28,6 @@ import android.widget.TextView;
  */
 public class SuperStateView extends LinearLayout {
     private Context mContext;
-    public static final String IMAGE_POSITION_TOP = "TOP";
-    public static final String IMAGE_POSITION_BOTTOM = "BOTTOM";
-    public static final String IMAGE_POSITION_LEFT = "LEFT";
-    public static final String IMAGE_POSITION_RIGTH = "RIGTH";
 
     public SuperStateView(Context context) {
         super(context);
@@ -56,7 +65,6 @@ public class SuperStateView extends LinearLayout {
             //Imagen
             Drawable image = array.getDrawable(R.styleable.superstateview_attr_imageResource);
             //posicion imagen
-            String imgPos = array.getString(R.styleable.superstateview_attr_imagePosition);
 
             /******Defino Vistas*******/
             //Contenedor ppal
@@ -67,7 +75,6 @@ public class SuperStateView extends LinearLayout {
             masterLay.setLayoutParams(masterLayparams);
 
             //Titulo
-
             LayoutParams lblParams = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
 
             TextView lblTitle = new TextView(mContext);
@@ -94,32 +101,10 @@ public class SuperStateView extends LinearLayout {
 
             //Imagen
             if (image != null) {
-                int h = image.getIntrinsicHeight() ;
-                int w = image.getIntrinsicWidth() ;
+                int h = image.getIntrinsicHeight();
+                int w = image.getIntrinsicWidth();
                 image.setBounds(0, 0, w, h);
-                //Posicion imagen
-                if (imgPos != null) {
-                    //se definio una posicion
-                    switch (imgPos.toUpperCase()) {
-                        case IMAGE_POSITION_TOP:
-                            lblTitle.setCompoundDrawables(null, image, null, null);
-                            break;
-                        case IMAGE_POSITION_BOTTOM:
-                            lblTitle.setCompoundDrawables(null, null, null, image);
-                            break;
-                        case IMAGE_POSITION_LEFT:
-                            lblTitle.setCompoundDrawables(image, null, null, null);
-                            break;
-                        case IMAGE_POSITION_RIGTH:
-                            lblTitle.setCompoundDrawables(null, null, image, null);
-                            break;
-                        default:
-                            lblTitle.setCompoundDrawables(null, image, null, null);
-                            break;
-                    }
-                } else
-                    lblTitle.setCompoundDrawables(null, image, null, null);
-
+                lblTitle.setCompoundDrawables(null, image, null, null);
                 lblTitle.setCompoundDrawablePadding(10);
             }
 
