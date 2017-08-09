@@ -72,22 +72,21 @@ Is composed by 3 elements:
         app:setTitleFont="ExternalFont.ttf"
         app:setSubTitleFont="ExternalFont.ttf"
         />
-
   ```
 
-  ### Instalation
+  ## Instalation
 
   This library is only available at this time only on jCenter
   
   Add to your dependecies
 
-**compile 'com.cipolat.android:superstateview:1.0.1**
+`compile 'com.cipolat.android:superstateview:1.0.1'`
 
   
 **FeedBack**
   Please feel free to report bugs, suggestion,etc. I'll be pending.
 
-
+[@seba_cipolat](http://twitter.com/seba_cipolat)
 ## License
     Copyright 2017
 
