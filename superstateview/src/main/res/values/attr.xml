@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="superstateview_attr">
-        <attr name="imageResource" format="reference" />
+        <attr name="imageState" format="reference" />
 
         <attr name="setTitleText" format="string" />
         <attr name="setSubTitleText" format="string" />

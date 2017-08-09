@@ -1,5 +1,6 @@
 package com.cipolat.superstateview;
 /*
+
 /  ___|                     /  ___| |      | |      | | | (_)
 \ `--. _   _ _ __   ___ _ __\ `--.| |_ __ _| |_ ___ | | | |_  _____      __
  `--. \ | | | '_ \ / _ \ '__|`--. \ __/ _` | __/ _ \| | | | |/ _ \ \ /\ / /
@@ -9,7 +10,7 @@ package com.cipolat.superstateview;
             |_|
 
   Created by Sebastian Cipolat
-  Version:1.01
+  Version:1.0.2
   ARGENTINA 2017
  */
 
@@ -28,6 +29,8 @@ import android.widget.TextView;
  */
 public class SuperStateView extends LinearLayout {
     private Context mContext;
+    private TextView lblTitle;
+    private TextView subTitle;
 
     public SuperStateView(Context context) {
         super(context);
@@ -46,7 +49,6 @@ public class SuperStateView extends LinearLayout {
         setUI(attrs);
     }
 
-
     public void setUI(AttributeSet attrs) {
         if (attrs != null) {
             /***Atributos**/
@@ -63,9 +65,8 @@ public class SuperStateView extends LinearLayout {
             String titleFont = array.getString(R.styleable.superstateview_attr_setTitleFont);
             String subTitleFont = array.getString(R.styleable.superstateview_attr_setSubTitleFont);
             //Imagen
-            Drawable image = array.getDrawable(R.styleable.superstateview_attr_imageResource);
+            Drawable image = array.getDrawable(R.styleable.superstateview_attr_imageState);
             //posicion imagen
-
             /******Defino Vistas*******/
             //Contenedor ppal
             LinearLayout masterLay = new LinearLayout(mContext);
@@ -73,71 +74,95 @@ public class SuperStateView extends LinearLayout {
             masterLay.setOrientation(VERTICAL);
             LayoutParams masterLayparams = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
             masterLay.setLayoutParams(masterLayparams);
-
             //Titulo
             LayoutParams lblParams = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
-
-            TextView lblTitle = new TextView(mContext);
-            lblTitle.setLayoutParams(lblParams);
-            if (!textTitle.isEmpty())
-                lblTitle.setText(textTitle);
+            this.lblTitle = new TextView(mContext);
+            this.lblTitle.setLayoutParams(lblParams);
+            if (textTitle != null && !textTitle.isEmpty())
+                this.lblTitle.setText(textTitle);
 
             //seteo estilo en titulo si hay definidos
-            if (titleStyle > 0)
-                TextViewCompat.setTextAppearance(lblTitle, titleStyle);
+            setTexViewStyle(this.lblTitle, titleStyle);
 
-            lblTitle.setGravity(Gravity.CENTER);
+            this.lblTitle.setGravity(Gravity.CENTER);
 
             //Custom Font
-            if (titleFont != null) {
-                Typeface typefaceTitl = null;
-                try {
-                    typefaceTitl = Typeface.createFromAsset(getContext().getAssets(), "fonts/" + subTitleFont);
-                    lblTitle.setTypeface(typefaceTitl);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-
+            setTexViewExternalFont(this.lblTitle, titleFont);
             //Imagen
-            if (image != null) {
-                int h = image.getIntrinsicHeight();
-                int w = image.getIntrinsicWidth();
-                image.setBounds(0, 0, w, h);
-                lblTitle.setCompoundDrawables(null, image, null, null);
-                lblTitle.setCompoundDrawablePadding(10);
-            }
-
+            setImageTop(lblTitle, image);
             //SubTexto
-            TextView subTitle = new TextView(mContext);
+            subTitle = new TextView(mContext);
             subTitle.setLayoutParams(lblParams);
-
-            if (!textSubTitle.isEmpty())
+            if (textSubTitle != null && !textSubTitle.isEmpty())
                 subTitle.setText(textSubTitle);
 
             subTitle.setGravity(Gravity.CENTER);
 
             //Seteo estilo en titulo si hay definidos
-            if (subTitleStyle > 0)
-                TextViewCompat.setTextAppearance(subTitle, subTitleStyle);
+            setTexViewStyle(this.subTitle, subTitleStyle);
 
-
-            //Custom Font
-            if (subTitleFont != null) {
-                Typeface typefaceSub = null;
-                try {
-                    typefaceSub = Typeface.createFromAsset(getContext().getAssets(), "fonts/" + subTitleFont);
-                    subTitle.setTypeface(typefaceSub);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
+            setTexViewExternalFont(this.subTitle, subTitleFont);
 
             //Agrego views
             masterLay.addView(lblTitle);
             masterLay.addView(subTitle);
             addView(masterLay);
             array.recycle();
+        }
+    }
+
+    public void setTitleText(String text) {
+        this.lblTitle.setText(text);
+    }
+
+    public void setSubTitleText(String text) {
+        this.subTitle.setText(text);
+    }
+
+    public void setImageState(Drawable image) {
+        setImageTop(this.lblTitle, image);
+    }
+
+    public void setTitleFont(String fontName) {
+        setTexViewExternalFont(this.lblTitle, fontName);
+    }
+
+    public void setSubTitleFont(String fontName) {
+        setTexViewExternalFont(this.subTitle, fontName);
+    }
+
+    public void setTitleStyle(int styleID) {
+        setTexViewStyle(this.lblTitle, styleID);
+    }
+
+    public void setSubTitleStyle(int styleID) {
+        setTexViewStyle(this.subTitle, styleID);
+    }
+
+    private void setTexViewExternalFont(TextView lbl, String fontName) {
+        if (fontName != null && !fontName.isEmpty()) {
+            Typeface typefaceTitl = null;
+            try {
+                typefaceTitl = Typeface.createFromAsset(getContext().getAssets(), "fonts/" + fontName);
+                lbl.setTypeface(typefaceTitl);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    private void setTexViewStyle(TextView lbl, int styleID) {
+        if (styleID > 0)
+            TextViewCompat.setTextAppearance(lbl, styleID);
+    }
+
+    private void setImageTop(TextView lbl, Drawable image) {
+        if (image != null) {
+            int h = image.getIntrinsicHeight();
+            int w = image.getIntrinsicWidth();
+            image.setBounds(0, 0, w, h);
+            lbl.setCompoundDrawables(null, image, null, null);
+            lbl.setCompoundDrawablePadding(10);
         }
     }
 }
