@@ -15,7 +15,7 @@ Is composed by 3 elements:
 | TITLE         
 | SUBTITLE
 
-Aca va la IMAGEN      
+![Imagen ejemplo](https://github.com/sebacipolat/SuperStateView/images/image1.png)
 
 ```xml
 <com.cipolat.superstateview.SuperStateView
