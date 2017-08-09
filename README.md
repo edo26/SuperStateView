@@ -86,7 +86,7 @@ Is composed by 3 elements:
 **FeedBack**
   Please feel free to report bugs, suggestion,etc. I'll be pending.
 
-
+[@seba_cipolat](http://twitter.com/seba_cipolat)
 ## License
     Copyright 2017
 
