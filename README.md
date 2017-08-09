@@ -81,10 +81,10 @@ Is composed by 3 elements:
   
   Add to your dependecies
 
-**  compile 'com.cipolat.android:superstateview:1.0.1'**
+**compile 'com.cipolat.android:superstateview:1.0.1**
 
   
-**FeedBack
+**FeedBack**
   Please feel free to report bugs, suggestion,etc. I'll be pending.
 
 
