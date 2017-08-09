@@ -15,7 +15,7 @@ Is composed by 3 elements:
 | TITLE         
 | SUBTITLE
 
-![Imagen ejemplo](https://github.com/sebacipolat/SuperStateView/images/image1.png)
+![Imagen ejemplo](https://raw.githubusercontent.com/sebacipolat/SuperStateView/master/images/image1.png)
 
 ```xml
 <com.cipolat.superstateview.SuperStateView
@@ -74,3 +74,13 @@ Is composed by 3 elements:
         />
 
   ```
+
+  ### Instalation
+
+  This library is only available at this time only on jCenter
+  
+  Add to your dependecies
+
+ ```xml
+  compile 'com.cipolat.android:superstateview:1.0.1'
+```
