@@ -4,7 +4,7 @@
 SuperStateView is an Android Library created to make easy the implementation of stateviews like empty states views, error messages,other.
 
 
-##Usage
+## Usage
 
 Their use is so easy like other view just add in your layout and set some basic values.
 
@@ -30,7 +30,7 @@ Is composed by 3 elements:
   ```
    **Image:**
    The image should be a clasic image file, not support Vector Drawable yet.
-   use `imageResource`
+   use `imageState`
    
   **Text:**
    Set the title and subtitle text content using `setTitleText` and `setTitleText`
@@ -80,7 +80,7 @@ Is composed by 3 elements:
   
   Add to your dependecies
 
-`compile 'com.cipolat.android:superstateview:1.0.1'`
+`compile 'com.cipolat.android:superstateview:1.0.2'`
 
   
 **FeedBack**
