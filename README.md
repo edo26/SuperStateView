@@ -26,6 +26,11 @@ Is composed by 3 elements:
     app:titleStyle="@style/erro_title"
     app:subTitleStyle="@style/erro_sub_title"/>
   ```
+   **Image:**
+   The image should be a clasic image file, not support Vector Drawable yet.
+   use `imageResource`
+   
+  **Text:**
+   Set the title and subtitle text content using `setTitleText` and `setTitleText`
 
   Define your custom Styles to modify the appeareance of the labels.
-
