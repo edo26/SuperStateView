@@ -22,7 +22,7 @@ Is composed by 3 elements:
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
-    app:imageResource="@drawable/cloud_sad"
+    app:imageState="@drawable/cloud_sad"
     app:setTitleText="Woops!"
     app:setSubTitleText="Verify your Internet Connection"
     app:titleStyle="@style/erro_title"
