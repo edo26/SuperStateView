@@ -65,7 +65,7 @@ Is composed by 3 elements:
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        app:imageResource="@drawable/cloud_sad"
+        app:imageState="@drawable/cloud_sad"
         app:setTitleText="@string/error_message_title"
         app:setSubTitleText="@string/error_message_subtitle"
         app:titleStyle="@style/erro_title"
@@ -80,7 +80,7 @@ Is composed by 3 elements:
   
   Add to your dependecies
 
-`compile 'com.cipolat.android:superstateview:1.0.2'`
+`compile 'com.cipolat.android:superstateview:1.0.3'`
 
   
 **FeedBack**
@@ -88,7 +88,7 @@ Is composed by 3 elements:
 
 [@seba_cipolat](http://twitter.com/seba_cipolat)
 ## License
-    Copyright 2017
+    Copyright 2017 sebastian cipolat
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
