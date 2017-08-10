@@ -17,7 +17,6 @@ package com.cipolat.superstateview;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Typeface;
-import android.graphics.drawable.Drawable;
 import android.support.v4.widget.TextViewCompat;
 import android.util.AttributeSet;
 import android.view.Gravity;
@@ -65,7 +64,7 @@ public class SuperStateView extends LinearLayout {
             String titleFont = array.getString(R.styleable.superstateview_attr_setTitleFont);
             String subTitleFont = array.getString(R.styleable.superstateview_attr_setSubTitleFont);
             //Imagen
-            Drawable image = array.getDrawable(R.styleable.superstateview_attr_imageState);
+            int imageID = array.getResourceId(R.styleable.superstateview_attr_imageState, 0);
             //posicion imagen
             /******Defino Vistas*******/
             //Contenedor ppal
@@ -89,7 +88,7 @@ public class SuperStateView extends LinearLayout {
             //Custom Font
             setTexViewExternalFont(this.lblTitle, titleFont);
             //Imagen
-            setImageTop(lblTitle, image);
+            setImageTop(lblTitle, imageID);
             //SubTexto
             subTitle = new TextView(mContext);
             subTitle.setLayoutParams(lblParams);
@@ -119,7 +118,7 @@ public class SuperStateView extends LinearLayout {
         this.subTitle.setText(text);
     }
 
-    public void setImageState(Drawable image) {
+    public void setImageState(int image) {
         setImageTop(this.lblTitle, image);
     }
 
@@ -156,12 +155,9 @@ public class SuperStateView extends LinearLayout {
             TextViewCompat.setTextAppearance(lbl, styleID);
     }
 
-    private void setImageTop(TextView lbl, Drawable image) {
-        if (image != null) {
-            int h = image.getIntrinsicHeight();
-            int w = image.getIntrinsicWidth();
-            image.setBounds(0, 0, w, h);
-            lbl.setCompoundDrawables(null, image, null, null);
+    private void setImageTop(TextView lbl, int image) {
+        if (image > 0) {
+            lbl.setCompoundDrawablesWithIntrinsicBounds(0, image, 0, 0);
             lbl.setCompoundDrawablePadding(10);
         }
     }
